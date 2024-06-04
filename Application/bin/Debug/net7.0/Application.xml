@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Application</name>
+    </assembly>
+    <members>
+        <member name="M:Application.Subscription.Controllers.PlansController.AddPlan(Application.Subscription.Request.PlanRequest)">
+            <summary>
+            Add a new plan
+            </summary>
+        </member>
+    </members>
+</doc>
