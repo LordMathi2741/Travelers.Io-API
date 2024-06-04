@@ -8,6 +8,10 @@
             <summary>
             Add a new plan
             </summary>
+            <param name="PlanRequest"> The plan to create </param>
+            <response code="201"> Returns the newly created plan </response>
+            <response code="500"> Server was down and plan post failed </response>
+            <response code="400"> Bad request </response>
         </member>
     </members>
 </doc>

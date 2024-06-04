@@ -13,8 +13,8 @@ namespace Application.Subscription.Controllers;
 [Route("/api/v1/[controller]")]
 [ApiController]
 [Produces(MediaTypeNames.Application.Json)]
-[ProducesResponseType(404)]
 [ProducesResponseType(500)]
+[ProducesResponseType(400)]
 [AllowAnonymous]
 public class PlansController(IRepositoryGeneric<Plan> repositoryGeneric, IMapper mapper) : ControllerBase
 {
@@ -25,7 +25,10 @@ public class PlansController(IRepositoryGeneric<Plan> repositoryGeneric, IMapper
     /// <summary>
     /// Add a new plan
     /// </summary>
-    
+    /// <param name="PlanRequest"> The plan to create </param>
+    /// <response code="201"> Returns the newly created plan </response>
+    /// <response code="500"> Server was down and plan post failed </response>
+    /// <response code="400"> Bad request </response>
     [HttpPost]
     [ProducesResponseType(201)]
     public async Task<IActionResult>AddPlan([FromBody] PlanRequest request)
